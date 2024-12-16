@@ -1,5 +1,5 @@
 * {
-    font-family: "Segoe UI", "Roboto", ui-sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 /* SIDEBAR CONFIG */
@@ -12,6 +12,7 @@
 /*Caption Window BG and Blur*/
 .caption-window {
     background-color: rgba(50, 50, 50, 0) !important;
+    /*CHANGE THE DECIMAL VALUE TO ADJUST THE DARKNESS OF THE CAPTION WINDOW*/
     backdrop-filter: blur(10px) !important;
     border-radius: 10px !important;
 }
@@ -64,7 +65,7 @@ ytd-thumbnail.ytd-rich-grid-media:before {
 }
 /*feed filter blur transition when hover*/
 iron-selector {
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     transition: none;
 }
 /*feed filter space remove*/
@@ -194,12 +195,7 @@ paper-toast#toast {
 ytd-rich-shelf-renderer[is-show-more-hidden] #dismissable.ytd-rich-shelf-renderer {
     border-bottom: none !important;
 }
-/*yt background*/
-ytd-two-column-browse-results-renderer.style-scope.ytd-browse,
-ytd-search.style-scope.ytd-page-manager,
-ytd-browse.style-scope.ytd-page-manager {
-    background: #191919 !important;
-}
+
 /*live chat info card*/
 #card.yt-live-chat-viewer-engagement-message-renderer {
     background-color: #272727;
@@ -365,7 +361,7 @@ ytd-inline-survey-renderer[expanded] #dismissable.ytd-inline-survey-renderer {
 /*yt header border radius fix*/
 #container.ytd-masthead {
     border-radius: 0px !important;
-    background: #0a0a0a;
+    background: rgba(10, 10, 10, .2);
 }
 /*merchandise border bottom fix*/
 ytd-video-secondary-info-renderer {
@@ -914,15 +910,7 @@ yt-live-chat-header-renderer.style-scope.yt-live-chat-renderer {
 #guide-wrapper.ytd-app {
     background: transparent !important;
 }
-/*sidebar background backdrop filter*/
-#guide-content.ytd-app,
-ytd-app[background-color-update_] #guide-content.ytd-app,
-ytd-mini-guide-renderer.ytd-app {
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    background: #0a0a0a !important;
-    overflow: hidden !important;
-}
+
 /*ytd transparent background*/
 ytd-mini-guide-entry-renderer[background-color-update],
 ytd-mini-guide-entry-renderer,
@@ -1246,8 +1234,9 @@ yt-interaction.circular .stroke.yt-interaction {
     border-radius: 10px !important;
 }
 #voice-search-button.ytd-masthead {
-    border-radius: 10px !important;
-    background-color: #0000003d !important;
+    border-radius: 50% !important;
+    background-color: #00000055 !important;
+    border: 2px dashed #be0a32;
 }
 tp-yt-paper-dialog {
     background: rgba(0, 0, 0, 0.2) !important;
@@ -1378,11 +1367,11 @@ ytd-feed-filter-chip-bar-renderer[is-dark-theme] #left-arrow.ytd-feed-filter-chi
 /* FIX FOR NEW YT THEME*/
 #info-container.ytd-watch-info-text {
     background-color: #1d1d1d;
-    font-family: "Segoe UI", "Roboto", ui-sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 ytd-text-inline-expander {
-    background-color: #1d1d1d;
-    font-family: "Segoe UI", "Roboto", ui-sans-serif;
+    background-color: transparent;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .ytd-watch-metadata:not([description-collapsed]) #description.ytd-watch-metadata {
@@ -1405,16 +1394,106 @@ ytd-watch-metadata:not([modern-metapanel]) #owner.ytd-watch-metadata {
 }
 /* Reverts the video title font. */
 ytd-watch-metadata[smaller-yt-sans-light-title] h1.ytd-watch-metadata {
-    font-family: "Segoe UI", "Roboto", ui-sans-serif;
+    font-family: "Segoe UI", sans-serif;
     font-weight: 800;
     font-size: 18px;
 }
 ytd-video-primary-info-renderer[use-yt-sans20-light] .title.ytd-video-primary-info-renderer {
-    font-family: "Segoe UI", "Roboto", ui-sans-serif;
+    font-family: "Segoe UI", sans-serif;
     font-weight: 400;
     font-size: 18px;
 }
 /* Removes the bold letters on upload date and view count. */
 .yt-formatted-string[style-target="bold"] {
     font-weight: 800;
+}
+
+.ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+/* December 15, 2024 UPDATE */
+#background.ytd-masthead {
+    background: transparent;
+}
+
+.ytSearchboxComponentInputBox,.ytSearchboxComponentInputBoxDark {
+    background: transparent;
+    border-radius: 100px 0 0 0;
+    border: 2px solid #be0a32;
+}
+
+.ytSearchboxComponentHost, .ytSearchboxComponentDesktop, .ytSearchboxComponentHostDark {
+    border-radius: 100px 0 0 0;
+}
+
+.ytSearchboxComponentSearchButton, .ytSearchboxComponentSearchButtonDark {
+    border-radius: 0 0 100px 0;
+    background: #be0a32;
+    border: 2px solid #be0a32;
+    transition: all 0.2s
+}
+
+.ytSearchboxComponentSearchButton:hover, .ytSearchboxComponentSearchButtonDark:hover {
+    background: transparent;
+    border: 2px solid #be0a32;
+}
+
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+    color: #be0a32;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #be0a32;
+    border-radius: 100px 0;
+    
+}
+
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+    color: #be0a32;
+    background: transparent;
+    border: 2px solid #be0a32;
+}
+
+/*sidebar background backdrop filter*/
+#guide-content.ytd-app,
+ytd-app[background-color-update_] #guide-content.ytd-app,
+ytd-mini-guide-renderer.ytd-app {
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    background:transparent;
+    overflow: hidden !important;
+}
+/*yt background*/
+ytd-two-column-browse-results-renderer.style-scope.ytd-browse,
+ytd-search.style-scope.ytd-page-manager,
+ytd-browse.style-scope.ytd-page-manager {
+    background: transparent !important;
+}
+
+.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal {
+    background: transparent;
+    border-radius: 100px 0;
+    border: 2px solid #be0a32;
+}
+.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal:hover {
+    background: #be0a32;
+    border-radius: 100px 0;
+    border: 2px solid #be0a32;
+}
+
+.ytSearchboxComponentSuggestionsContainer, .ytSearchboxComponentSuggestionsContainerDark {
+    background: rgba(50, 50, 50, .3);
+    backdrop-filter: blur(10px);
+}
+
+.ytSearchboxComponentSuggestionsContainer>*, .ytSearchboxComponentSuggestionsContainerDark>* {
+    transition: all 0.2s;
+}
+
+.ytSearchboxComponentSuggestionsContainer>*:hover, .ytSearchboxComponentSuggestionsContainerDark>*:hover {
+    background: rgba(116, 0, 26, .75);
+}
+
+ytd-app {
+  background: linear-gradient(to right,#be0a32 0%,transparent 5%);
 }
